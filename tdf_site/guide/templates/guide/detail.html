@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container" style="min-height: 800px">
+        <hr>
+        <h1 class="detail-name">{{ restaraunt.name }}</h1>
+        <br>
+        <div class="streetview">
+            <img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location={{ restaraunt.geometry.location.lat }},{{ restaraunt.geometry.location.lng }}&key={{ GOOGLE_API_KEY }}" alt="Street View Image">
+        </div>
+        <br>
+        <h3>{{ restaraunt.formatted_address }}</h3>
+        <p class=review_text>{{ restaraunt.review|safe }}</p>
+    </div>
+{% endblock %}

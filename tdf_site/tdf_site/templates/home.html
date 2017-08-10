@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h1>Hi there, welcome to TourDeFederal</h1>
+                <a href="{% url 'guide:index' %}" class="button">Follow Our Quest</a>
+            </div>
+        </div>
+    </header>
+    <!-- Page Content -->
+    <div class="container" style="text-align:center">
+        <h3>Eating our way down Federal Blvd one restaurant at a time from Bellevue to 36.</h3>
+        <br><br><br>
+        <h4>Visit Our Instagram!</h4>
+        <a href="https://www.instagram.com/tourdefederal/" class="instagram-button"><img src="https://instagram-brand.com/wp-content/uploads/2016/11/app-icon2.png" style="max-width:50px" alt="Instagram Button"></a>
+
+    </div>
+    <div class="container">
+
+        <hr class="featurette-divider">
+
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">About Us
+                <span class="text-muted">Will Catch Your Eye</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Second Featurette -->
+
+        <div class="featurette" id="contact">
+            <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">Contact Us
+                <span class="text-muted">Will Seal the Deal.</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+    </div>
+{% endblock content %}

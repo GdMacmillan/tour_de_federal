@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <head>
+        <style>
+            #map {
+            height: 400px;
+            width: 100%;
+            }
+        </style>
+    </head>
+    <div id="map"></div>
+    <div class="container">
+        <div class="list">
+            <h3 style="text-align:center">Where We've Been So Far</h3>
+            <ul>
+                {% for restaraunt in object_list %}
+                <hr>
+                <li><a href="{% url 'guide:detail' restaraunt.id %}">{{ restaraunt.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!-- map function script -->
+    <script>
+        function initMap() {
+            var federal = {lat: 39.684987, lng: -105.024972};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 12,
+              center: federal
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+
+            var locations = {{ locations|safe }};
+
+            var marker, i;
+
+            for (var i = 0; i < locations.length; i++) {
+                var name = locations[i][0]
+                var lat = locations[i][1]
+                var lng = locations[i][2]
+                var link = locations[i][3]
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(lat, lng),
+                    map: map,
+                    title: name
+                });
+
+                google.maps.event.addListener(marker, 'click', function() {
+                    window.location.href = link;
+                });
+            }
+        }
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_API_KEY }}&callback=initMap">
+    </script>
+{% endblock content %}

@@ -1,0 +1,6 @@
+credentials.json
+venv
+*.pyc
+.env
+webscraping
+static
