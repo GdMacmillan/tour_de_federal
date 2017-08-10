@@ -4,3 +4,4 @@ venv
 .env
 webscraping
 static
+keys.json
